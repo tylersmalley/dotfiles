@@ -26,7 +26,6 @@ rm -rf \
   "$DOTLOCAL" \
   "$HOME/.bashrc" \
   "$HOME/.gitconfig" \
-  "$HOME/.screenrc" \
   "$HOME/.vim" \
   "$HOME/.vimrc" \
   "$HOME/.zshrc"
@@ -39,7 +38,6 @@ mkdir -p \
 
 ln -s "$DOTFILES/bashrc" "$HOME/.bashrc"
 ln -s "$DOTFILES/gitconfig" "$HOME/.gitconfig"
-ln -s "$DOTFILES/screenrc" "$HOME/.screenrc"
 ln -s "$DOTFILES/vimrc" "$HOME/.vimrc"
 ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
 
@@ -78,6 +76,3 @@ ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
 
 # cd "$HOME" || exit
 # rm -f "${HOME}/.zcompdump*"
-
-echo
-echo "DONEZO!!~!"∂�
