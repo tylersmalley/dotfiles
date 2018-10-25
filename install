@@ -28,7 +28,8 @@ rm -rf \
   "$HOME/.gitconfig" \
   "$HOME/.vim" \
   "$HOME/.vimrc" \
-  "$HOME/.zshrc"
+  "$HOME/.zshrc" \
+  "$HOME/.oh-my-zsh"
 
 mkdir -p \
   "$DOTLOCAL" \
@@ -41,21 +42,19 @@ ln -s "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 ln -s "$DOTFILES/vimrc" "$HOME/.vimrc"
 ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
 
-$GITCLONE https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+$GITCLONE https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
 
 # $GITCLONE https://github.com/junegunn/fzf.git "$DOTFZF"
 # "$DOTFZF/install" --key-bindings --completion --no-update-rc
 
-# ZSHPLUGS=(
-#   "zsh-completions"
-#   "zsh-history-substring-search"
-#   "zsh-syntax-highlighting"
-# )
+ZSHPLUGS=(
+  "zsh-autosuggestions"
+)
 
-# for INDEX in ${!ZSHPLUGS[*]}; do
-#   ZSHPLUG="${ZSHPLUGS[$INDEX]}"
-#   $GITCLONE "https://github.com/zsh-users/$ZSHPLUG.git" "$DOTLOCAL/$ZSHPLUG"
-# done
+for INDEX in ${!ZSHPLUGS[*]}; do
+  ZSHPLUG="${ZSHPLUGS[$INDEX]}"
+  $GITCLONE "https://github.com/zsh-users/$ZSHPLUG.git" "$HOME/.oh-my-zsh/custom/plugins/$ZSHPLUG"
+done
 
 # VIMPLUGS=(
 #   "w0rp/ale"
