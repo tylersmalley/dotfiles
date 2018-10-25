@@ -32,7 +32,7 @@ rm -rf \
 
 mkdir -p \
   "$DOTLOCAL" \
-  "$HOME/.local/share/vim/"{swap,undo} \
+  "$HOME/.local/share/vim/{swap,undo}" \
   "$HOME/.vim/colors" \
   "$HOME/.vim/pack/plugins/start"
 
